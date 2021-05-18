@@ -1,0 +1,21 @@
+<div>
+    <h2>Login Page Using Template Driven Form</h2>
+    <form #loginRef="ngForm" (ngSubmit)="checkUser(loginRef)">
+        <label>UserName</label>
+        <input type="text" name="user" ngModel required #userRef="ngModel"/>
+        <div *ngIf="userRef.errors && (userRef.dirty || userRef.touched)">
+            <span style="color:red;">UserName is required</span>
+        </div>
+        <br/>
+        <label>Password</label>
+        <input type="password" name="pass" ngModel required #passRef="ngModel"/>
+        <div *ngIf="passRef.errors && (passRef.dirty || passRef.touched)">
+            <span style="color:red;">Password is required</span>
+        </div>
+        <br/>
+        <input type="submit" value="submit" [disabled]="loginRef.invalid"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <br/>
+    {{result}}
+</div>
