@@ -1,0 +1,14 @@
+.myClass{
+    background-color: cadetblue;
+}
+
+.firstClass{
+    background-color: chartreuse;
+    font-size: 25px;
+    border: red solid 2px;
+}
+.secondClass{
+    background-color:gold;
+    font-size: 10px;
+    border:greenyellow dotted 2px;
+}

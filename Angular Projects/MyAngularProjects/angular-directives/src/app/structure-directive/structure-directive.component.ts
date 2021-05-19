@@ -1,15 +1,53 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormControl, FormGroup } from '@angular/forms';
+import { Employee } from '../employee.model';
 @Component({
   selector: 'app-structure-directive',
   templateUrl: './structure-directive.component.html',
   styleUrls: ['./structure-directive.component.css']
 })
 export class StructureDirectiveComponent implements OnInit {
+  empRef = new FormGroup({
+    empid:new FormControl(),
+    empname:new FormControl(),
+    empsalary:new FormControl()
+  });
+  
+  fname:string="Ajay Kumar";
+  
+  styleVariable={'color':'red'}
+  
+  f1:boolean = true;
+  f2:boolean = false;
+  
   flag:boolean = false;
   b1:string="show";
-  constructor() { }
-
+  stdNames:Array<string>=["Raj","Seeta","Reeta","Veeta","Teeta"]
+  employees:Array<Employee>=new Array();// array employee object 
+  
+  constructor() { 
+    let emp1 = new Employee(100,"Ramesh",14000);
+    let emp2 = new Employee(101,"Ravi",17000);
+    let emp3 = new Employee(102,"Rajesh",19000);
+    let emp4 = new Employee(103,"Raj",22000);
+    this.employees.push(emp1);
+    this.employees.push(emp2);
+    this.employees.push(emp3);
+    this.employees.push(emp4);
+    this.employees.push(new Employee(104,"Ram",17000));
+  }
+  changeColor():void {
+    this.f1=!this.f1;   //if true make it false if false make it true
+    this.f2=!this.f2;   // if false make it true if true make it false
+  }
+  addEmployee() {
+    console.log(this.empRef.value);
+    let empId = this.empRef.value.empid;
+    let empName = this.empRef.value.empname;
+    let empSalary = this.empRef.value.empsalary;
+    let emp = new Employee(empId,empName,empSalary);
+    this.employees.push(emp);
+  }
   ngOnInit(): void {
   }
   change() {

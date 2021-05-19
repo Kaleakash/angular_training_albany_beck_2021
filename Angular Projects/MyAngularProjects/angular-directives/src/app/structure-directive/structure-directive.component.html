@@ -1,7 +1,51 @@
-<div>
+<div class="container">
     <h2 *ngIf="false">Welcome to Angular Directive</h2>
     
-    <input type="button" [value]="b1" (click)="change()"/>
+<input type="button" [value]="b1" (click)="change()" 
+class="btn btn-success"/>
     <hr/>
     <h1 *ngIf="flag">Hello.....</h1>
+    <hr/>
+    <h3>All Students Names are</h3>
+    {{stdNames}}
+    <ul class="list-group">
+        <li *ngFor="let sname of stdNames" class="list-group-item">{{sname}}</li>
+    </ul>
+    <br/>
+    <form [formGroup]="empRef" class="form-group">
+        <input type="text" placeholder="Enter Id" formControlName="empid" 
+        class="form-control"/>
+        <input type="text" placeholder="Enter Name" formControlName="empname" 
+        class="form-control"/>
+        <input type="text" placeholder="Enter Salary" formControlName="empsalary" 
+        class="form-control"/>
+        <input type="button" value="Add Employee" 
+        (click)="addEmployee()" class="btn btn-danger"/>
+    </form>
+    <h2>Employee Details</h2>
+    <table border="1" class="table table-striped">
+        <tr class="thead-dark">
+            <th>Id</th>
+            <th>Name</th>
+            <th>Salary</th>
+        </tr>
+        <tr *ngFor="let emp of employees">
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.salary}}</td>
+        </tr>
+    </table>
+    <hr/>
+    <h2>ngStyle and ngClass</h2>
+    <p style="color:red;">Welcome to style attribute using css</p>
+    <p [ngStyle]="{'color':'red'}">Welome to ngStyle attribute using Angular</p>
+    <p [ngStyle]="styleVariable">Welome to ngStyle attribute using Angular</p>
+    <p class="myClass">Welcome to class selector using Css</p>
+    <p [ngClass]=" 'myClass' ">Welcome to class selector using ngClass from angular</p>
+    <p [ngClass]="{firstClass:f1,secondClass:f2}">Welcome to class selector using ngClass from angular</p>
+    <input type="button" value="change effect" (click)="changeColor()"/>
 </div>
+
+
+
+
