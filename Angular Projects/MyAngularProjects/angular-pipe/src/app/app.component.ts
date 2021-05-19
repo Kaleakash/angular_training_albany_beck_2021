@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-pipe';
+  fname:string="Ajay Kumar";
+  salary:number = 50000;
+  dd = new Date();
 }
