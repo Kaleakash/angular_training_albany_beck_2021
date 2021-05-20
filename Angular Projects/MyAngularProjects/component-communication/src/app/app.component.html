@@ -1,0 +1,20 @@
+<div>
+  <h2>Parent Component</h2>
+Name :<input type="text" #nameRef />
+<input type="button" value="Click" (click)="passName(nameRef)"/>
+<br/>
+Parent Name is {{parentName}} and child Name is {{cName}}
+  <br/>
+  <hr/>
+  <app-child1  [pname]="parentName" (eventRef)="cName=$event"></app-child1>
+  <hr/>
+  <app-child2 [parentArrayNum]="wholeNumber" 
+  (evenRef)="EvenSum=$event" (oddRef)="OddSum=$event"></app-child2>
+  <hr/>
+  <h2>Parent Component</h2>
+  Number :<input type="text" #numberRef/>
+  <input type="button" value="Enter Number" (click)="addNumber(numberRef)"/>
+  <br/>
+  Sum of event {{EvenSum}} and Odd {{OddSum}}
+</div>
+

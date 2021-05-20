@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "id": 100,
+      "pname": "Sony TV",
+      "price": 55000
+    },
+    {
+      "id": "104",
+      "pname": "Mobile",
+      "price": "32000"
+    },
+    {
+      "id": "101",
+      "pname": "Dell Laptop",
+      "price": "96000"
+    },
+    {
+      "id": "106",
+      "pname": "Apple Mobile",
+      "price": "110000"
+    },
+    {
+      "id": "102",
+      "pname": "Computer",
+      "price": "47000"
+    }
+  ]
+}

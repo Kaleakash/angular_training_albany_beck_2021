@@ -1,0 +1,35 @@
+<div>
+    <h2>Add Products</h2>
+    <form [formGroup]="productRef">
+        <label>PId</label>
+        <input type="text" formControlName="id" [readonly]="idVar"/><br/>
+        <label>PName</label>
+        <input type="text" formControlName="pname"/><br/>
+        <label>Price</label>
+        <input type="text" formControlName="price"/><br/>
+    <input type="button" [value]="buttonValue" 
+    (click)="storeProduct()"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <br/>
+    {{resultMessage}}
+    <hr/>
+    <table border="1">
+            <tr>
+                <th>PId</th>
+                <th>PName</th>
+                <th>Price</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+            <tr *ngFor="let product of products">
+                   <td>{{product.id}}</td>
+                   <td>{{product.pname}}</td>
+                   <td>{{product.price}}</td>
+            <td><input type="button" value="Delete" 
+                (click)="deleteRec(product.id)"/></td>
+                <td><input type="button" value="Update"
+                (click)="updateRec(product)"/></td> 
+            </tr>
+    </table>
+</div>
